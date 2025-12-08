@@ -13,7 +13,7 @@ export class MyChart extends Chart {
       kind: 'Pod',
       metadata: {
         namespace: 'frontend',
-        name: 'ngixnx',
+        name: 'nginx',
         labels: label,
       },
       spec: {
