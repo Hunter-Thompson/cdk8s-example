@@ -35,4 +35,5 @@ export class MyChart extends Chart {
 const app = new App();
 new MyChart(app, 'hello', {
 });
-app.synthYaml();
+const y = app.synthYaml();
+console.log(y)
