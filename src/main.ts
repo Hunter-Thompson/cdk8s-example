@@ -12,7 +12,8 @@ export class MyChart extends Chart {
       apiVersion: 'apps/v1',
       kind: 'Deployment',
       metadata: {
-        name: 'nginx-deployment'
+        name: 'nginx-deployment',
+        namespace: 'frontend',
       },
       spec: {
         replicas: 1,
