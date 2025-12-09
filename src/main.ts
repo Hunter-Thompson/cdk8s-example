@@ -1,13 +1,13 @@
 import { App, Chart, ChartProps, ApiObject } from 'cdk8s';
 import { Construct } from 'constructs';
-import * as os from 'os';
 
 export class MyChart extends Chart {
   constructor(scope: Construct, id: string, props: ChartProps = { }) {
     super(scope, id, props);
 
     const label = { app: 'hello-k8s' };
-    const image = os.env.IMAGE
+    // set image as env IMAGE
+    const image = process.env.IMAGE 
 
     // create a deployment nginx  
     new ApiObject(this, 'deployment', {
