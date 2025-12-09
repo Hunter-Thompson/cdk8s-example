@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: workflow-api 
+  name: cubestore
   namespace: argocd         # The namespace where ArgoCD is running
 spec:
   project: default
