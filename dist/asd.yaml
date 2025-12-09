@@ -13,7 +13,7 @@ spec:
       name: cdk8s
       env:
         - name: IMAGE
-          string: nginx:alpine
+          value: nginx:alpine
   destination:
     server: https://kubernetes.default.svc
     namespace: cdk8s-example-ns # Define the target namespace for the deployed resources
