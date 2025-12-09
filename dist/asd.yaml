@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cdk8s-example-app # A descriptive name for your application
+  namespace: argocd         # The namespace where ArgoCD is running
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Hunter-Thompson/cdk8s-example
+    targetRevision: HEAD
+    path: .
+    plugin:
+      name: cdk8s
+      env:
+        - name: IMAGE
+          value: nginx:alpine
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: cdk8s-example-ns # Define the target namespace for the deployed resources
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

@@ -42,7 +42,6 @@ junit.xml
 !/tsconfig.dev.json
 !/src/
 /lib
-/dist/
 !/.eslintrc.json
 !/cdk8s.yaml
 !/.projenrc.ts
