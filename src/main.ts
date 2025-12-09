@@ -8,6 +8,7 @@ export class MyChart extends Chart {
     const label = { app: 'hello-k8s' };
     // set image as env IMAGE
     const image = process.env.PARAMS_IMAGE
+    console.log(process.env)
 
     // create a deployment nginx  
     new ApiObject(this, 'deployment', {
