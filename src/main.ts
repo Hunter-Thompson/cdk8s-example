@@ -7,7 +7,7 @@ export class MyChart extends Chart {
 
     const label = { app: 'hello-k8s' };
     // set image as env IMAGE
-    const image = process.env.ARGOCD_ENV_IMAGE 
+    const image = process.env
 
     // create a deployment nginx  
     new ApiObject(this, 'deployment', {
