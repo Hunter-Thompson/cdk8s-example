@@ -11,7 +11,7 @@ spec:
     path: .
     plugin:
       name: cdk8s
-      parameters:
+      env:
         - name: IMAGE
           string: nginx:alpine
   destination:
