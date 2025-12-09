@@ -7,29 +7,40 @@ export class MyChart extends Chart {
 
     const label = { app: 'hello-k8s' };
 
-
+    // create a deployment nginx  
     new ApiObject(this, 'deployment', {
-      apiVersion: 'v1',
-      kind: 'Pod',
+      apiVersion: 'apps/v1',
+      kind: 'Deployment',
       metadata: {
-        namespace: 'frontend',
-        name: 'nginx',
-        labels: label,
+        name: 'nginx-deployment'
       },
       spec: {
-        containers: [{
-          name: 'nginx',
-          image: 'nginx:1.14-alpine',
-          resources: {
-            limits: {
-              memory: '20Mi',
-              cpu: 0.2,
-            },
+        replicas: 1,
+        selector: {
+          matchLabels: label
+        },
+        template: {
+          metadata: {
+            labels: label
           },
-        }],
-      },
+          spec: {
+            containers: [
+              {
+                name: 'nginx',
+                image: 'nginx:1.14.2',
+                ports: [
+                  {
+                    containerPort: 80
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
     });
   }
+
 }
 
 const app = new App();
