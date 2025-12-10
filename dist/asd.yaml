@@ -5,6 +5,11 @@ metadata:
   namespace: argocd         # The namespace where ArgoCD is running
 spec:
   project: default
+  info:
+    - name: GRAFANA_DASHBOARD_URL
+      value: "example.com"
+    - name: LOGS_URL
+      value: "example.com"
   source:
     repoURL: https://github.com/Hunter-Thompson/cdk8s-example
     targetRevision: HEAD
