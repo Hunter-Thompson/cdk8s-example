@@ -9,7 +9,7 @@ spec:
     - name: GRAFANA_DASHBOARD_URL
       value: "example.com"
     - name: LOGS_URL
-      value: "example.com"
+      value: "example.comm"
   source:
     repoURL: https://github.com/Hunter-Thompson/cdk8s-example
     targetRevision: HEAD
